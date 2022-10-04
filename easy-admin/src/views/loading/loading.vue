@@ -1,11 +1,11 @@
 <template>
-  <div>
-    首页
-  </div>
+     <div>
+
+     </div>
 </template>
 
 <script setup lang='ts'>
-
+import { ref } from 'vue'
 
 </script>
 
