@@ -1,14 +1,6 @@
 import {createRouter,createWebHashHistory}from 'vue-router'
-import Home from '../views/home.vue'
+
 const routes=[
-    {
-        path:"/",
-        name:"Home",
-        meta:{
-            title:"首页"
-        },
-        component:Home
-    },
     {
         path:"/loading",
         name:"Loading",
@@ -18,13 +10,48 @@ const routes=[
         component:()=>import('../views/loading/loading.vue')
     },
     {
-        path:"/about",
-        name:"About",
+        path:"/",
+        name:"布局",
         meta:{
-            title:"关于"
+            title:"布局"
         },
-        component:()=>import('../views/about.vue')
-    }
+        component:()=>import('../layout/index.vue'),
+        redirect:"/users",
+        children:[
+            {
+                path:"/users",
+                component:()=>import('../views/users/index.vue')
+            },
+            {
+                path:"/rights",
+                component:()=>import('../views/rights/index.vue')
+            },
+            {
+                path:"/roles",
+                component:()=>import('../views/rights/roles.vue')
+            },
+            {
+                path:"reports",
+                component:()=>import('../views/report/index.vue')
+            },
+            {
+                path:"/orders",
+                component:()=>import('../views/orders/index.vue')
+            },
+            {
+                path:"/goods",
+                component:()=>import('../views/goods/index.vue')
+            },
+            {
+                path:"/params",
+                component:()=>import('../views/goods/params.vue')
+            },{
+                path:"categories",
+                component:()=>import('../views/goods/categories.vue')
+            }
+        ]
+    },
+    
 ]
 
 const router=createRouter({

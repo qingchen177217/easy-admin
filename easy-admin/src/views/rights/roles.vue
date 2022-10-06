@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+     <div>
+        roles
+     </div>
 </template>
 
 <script setup lang='ts'>
+import { ref } from 'vue'
 
 </script>
 

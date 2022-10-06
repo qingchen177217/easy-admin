@@ -1,7 +1,7 @@
 <template>
-     <div>
-            
-     </div>
+    <div>
+        orders
+    </div>
 </template>
 
 <script setup lang='ts'>

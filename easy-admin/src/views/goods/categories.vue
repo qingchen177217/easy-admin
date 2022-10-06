@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+     categories
+    </div>
 </template>
 
 <script setup lang='ts'>
+import { ref } from 'vue'
 
 </script>
 
