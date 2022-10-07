@@ -2,18 +2,25 @@ import {defineStore}from 'pinia'
 import {login as loginApi}from '../api/login'
 import router from '../router/index'
 import { setTokenTime}from '../utils/auth'
-
+import screenfull from 'screenfull'
 
 const store=defineStore('main',{
-    state:()=>{
-        return {
-            token:localStorage.getItem('token')||''
-        }
-    },
+    state:()=>{return {
+            token:localStorage.getItem('token')||'',
+            sliderType:true//定义汉堡按钮的改变,
+            ,lang:localStorage.getItem('lang')
+    }},
     getters:{
-        Goodtoken:(state)=>state.token
+        Goodtoken:(state)=>state.token, 
+        langChange:(state)=>state.lang
     },
     actions:{
+        changelang(lang:any){
+            this.lang=lang
+        },
+        changeSiderType(){
+            this.sliderType=!this.sliderType
+        },
          setToken(state:any,token:any){
             state.token=token
             localStorage.setItem('token',token)
@@ -40,6 +47,11 @@ const store=defineStore('main',{
             this.setToken(this.$state,'')
             localStorage.clear() 
             router.replace('/loading')
+            if(screenfull.isEnabled){//调用全屏接口，退出登录切换到登录页时退出全屏
+                if(screenfull.isFullscreen){
+                    screenfull.toggle()
+                }
+            }
          }
     }
 })

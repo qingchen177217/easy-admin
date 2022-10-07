@@ -2,7 +2,9 @@
     <div class="loading-container">
         <el-form :model="form" class="login-form" :rules="rules" ref="formEl">
             <div class="title-container">
-                <h3 class="title">用户登录</h3>
+                <h3 class="title">
+                    {{$t('msg.title')}}
+                </h3>
             </div>
             <el-form-item prop="username">
                 <el-input v-model="form.username" :prefix-icon="User" size="large" />

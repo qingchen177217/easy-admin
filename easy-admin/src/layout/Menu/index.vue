@@ -7,6 +7,7 @@
     :default-active=defaultActive
     unique-opened
     router
+    :collapse="!usestore.sliderType"
     >
         <el-sub-menu :index=item.id.toString() v-for="(item,index) in menulist" :key=item.id.toString()>
             <template #title>
@@ -29,7 +30,9 @@
 
 <script setup lang='ts'>
 import { menuList } from '../../api/menu'
+import store from '../../store/login'
 
+const usestore =store()
 const iconList=ref(['user','setting','shop','tickets','pie-chart'])
 const icon=ref('menu')
 
