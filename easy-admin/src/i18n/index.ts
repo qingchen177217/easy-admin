@@ -26,6 +26,9 @@ const message = {//不同的语言对应的内容
             mg_state: "mg_state",
             create_time: "create_time",
             action: "action"
+        } ,
+        message:{
+            updateSuccess:"update success"
         }
     },
     zh: {
@@ -54,6 +57,9 @@ const message = {//不同的语言对应的内容
             mg_state: "状态",
             create_time: "创建时间",
             action: "操作"
+        },
+        message:{
+            updateSuccess:"更新成功"
         }
     }
 }
